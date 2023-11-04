@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+
+    }
+    section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url(image/pexels-mudassir-ali-2680270.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: animateBg 5s linear infinite;
+}
+.main{
+    position: relative;
+    width: 40%;
+    height: auto;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+}
+
+        /* .main{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            top: 20vh;
+            width: 40%;
+            height: auto;
+            border: 2px solid black;
+            background-color: white;
+        } */
+        #currentDate{
+            position: relative;
+            bottom: 200px;
+            right:500px;
+            font-size: 2vw;
+            color: white;
+            font-weight: 600;
+        }
+        /* #cureenthour {
+            position: relative;
+            bottom: 380px;
+           left: 40vw;
+            font-size: 2vw;
+            color: white;
+            font-weight: 600;
+        }
+        #currentSecound {
+            position: relative;
+            bottom: 380px;
+           left: 40vw;
+            font-size: 2vw;
+            color: white;
+            font-weight: 600;
+        }
+        #cureentMinute{
+            position: relative;
+            bottom: 380px;
+           left: 40vw;
+            font-size: 2vw;
+            color: white;
+            font-weight: 600;
+        } */
+        h2{
+            text-align: center;
+            position: relative;
+            /* top: 4vh; */
+            bottom: 16vh; 
+            color: white; 
+            font-style: italic;  
+            font-size: 3vw;        
+        }
+        .inp{
+            display: flex;
+            position: relative;
+            /* top: 10vh; */
+            bottom: 4vh;
+            /* left: 3vw; */
+            gap: 1vw;
+        }
+        .inp input{
+            width: 100%;
+            /* height: 4vh; */
+        }
+        .contant{
+            position: relative;
+            top: 3vh;
+            color: white;
+        }
+        .bottom{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            top: 3vh;
+            color: white;
+        
+        }
+        .bottom p{
+            position: relative;
+            bottom: 3vh;
+            font-size: 1.6vw;
+            font-weight: 300;
+        }
+        .bottom #para{
+           position: relative;
+           right: 60px;
+           visibility: hidden;
+        }
+        .bottom #dated{
+            position: relative;
+            left: 60px;
+            visibility: hidden;
+        }
+        .content{
+            position: relative;
+            bottom: 4vh;
+            text-align: center;
+            /* font-size: 19px;
+            font-weight: 200; */
+        }
+        .content #years{
+            font-size: 2.6vw;
+            font-weight: 500;
+        }
+        .content #days{
+            font-size: 2.6vw;
+            font-weight: 500;
+        }
+        .content #hour {
+            font-size: 2.6vw;
+            font-weight: 500;
+        }
+        @media (max-width:600px) {
+            .main{
+                width: 100%;
+            }
+            h2{
+                font-size: 40px;
+                font-weight: 800;
+                /* position: relative; */
+                /* bottom: 40px; */
+            }
+            .contant .content #years{
+                font-size: 30px;
+            }
+            .contant .content #days{
+                font-size: 30px;
+            }
+            .contant .content #hour{
+                font-size: 30px;
+            }
+            .bottom #para{
+                position: relative;
+                left: 3px;
+                font-size: 21px;
+            }
+            .bottom #dated{
+                visibility: hidden;
+                /* position: relative;
+                right: 100px !important;
+                color: black;
+                font-size: 21px; */
+            }
+            #currentDate{
+
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div class="main">
+            <div>
+                <h2>Age calculator</h2>
+                <h4 id="currentDate"></h4>
+                <div class="inp">
+                    <input class="form-control" placeholder="Enter your birthday date" type="date" name="" id="inp">
+                    <button id="checked" class="btn btn-success">Check</button>
+                    <button id="deleted" class="btn btn-danger">Delete</button>
+                </div>
+                <div class="bottom">
+                    <p id="para">your age is,</p>
+                    <p id="dated"></p>
+                    
+                </div>
+                <div class="contant">
+                    <div class="content">
+                        <h3 id="years"></h3>
+                        <h3 id="days"></h3>
+                        <h3 id="hour"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script>
+        let currentDate = new Date();     
+        console.log(currentDate.toDateString())
+        document.querySelector("#currentDate").innerHTML = currentDate.toDateString();
+        document.getElementById("checked").addEventListener('click',()=>{
+            let userInp = document.getElementById('inp').value;
+                document.querySelector("#dated").style.visibility='visible'
+                document.getElementById('para').style.visibility='visible'
+                let dated = new Date(userInp);
+                let timeDtaed = dated.getTime();
+                let date = dated.toDateString()
+                console.log(date)
+                let total = new Date();
+                let totalDuration = total.getTime();
+                let years =  'Age :'+ Math.floor ((totalDuration - timeDtaed) / (1000 * 3600 * 24 * 30 * 12)); //years 
+                let days ='Days :' + Math.floor((totalDuration - timeDtaed)/ (1000 * 60 * 60 * 24));  //days+
+                let hour ='Hours :' + Math.floor ((totalDuration - timeDtaed)/ (1000 * 60 * 60 )); // hours
+                document.getElementById("dated").innerHTML = date;
+                document.getElementById("years").innerHTML = years;
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hour").innerHTML = hour;
+        })
+        document.getElementById('deleted').addEventListener('click',()=>{
+            document.getElementById('para').style.visibility='hidden'
+            document.getElementById("years").innerHTML = " ";
+            document.getElementById("days").innerHTML = " ";       
+            document.getElementById("hour").innerHTML = " ";  
+            document.getElementById("dated").innerHTML = " ";
+            location.reload();       
+        })
+        let input = document.querySelector('input');
+        input.addEventListener('keyup',(e)=>{
+            if(e.keyCode === 13){
+                document.querySelector("#dated").style.visibility='visible'
+            document.getElementById('para').style.visibility='visible'
+            let userInp = document.getElementById('inp').value;
+            let dated = new Date(userInp);
+            let timeDtaed = dated.getTime();
+            let date = dated.toDateString()
+            // console.log(date)
+            let total = new Date();
+            let totalDuration = total.getTime();
+            let years =  'Age :'+ Math.floor ((totalDuration - timeDtaed) / (1000 * 3600 * 24 * 30 * 12)); //years 
+            let days ='Days :' + Math.floor((totalDuration - timeDtaed)/ (1000 * 60 * 60 * 24));  //days+
+            let hour ='Hours :' + Math.floor ((totalDuration - timeDtaed)/ (1000 * 60 * 60 )); // hours
+            document.getElementById("dated").innerHTML = date;
+            document.getElementById("years").innerHTML = years;
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hour").innerHTML = hour;
+                console.log(e.target.value)
+            }
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
